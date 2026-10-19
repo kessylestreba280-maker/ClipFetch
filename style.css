@@ -1,0 +1,377 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #f5f6ff;
+  line-height: 1.6;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ===== Header and Navigation ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 8%;
+  background: #10172a;
+  border-bottom: 1px solid #252d45;
+}
+
+.logo {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span,
+h1 span {
+  color: #927bff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+nav a {
+  color: #c1c7db;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #a99aff;
+}
+
+/* ===== Main Hero Section ===== */
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 76px 22px;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 15px;
+  border: 1px solid #443a79;
+  border-radius: 30px;
+  background: #1d1940;
+  color: #b9adff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h1 {
+  margin: 25px 0 16px;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.intro {
+  max-width: 580px;
+  margin: 0 auto 30px;
+  color: #a7b0c8;
+  font-size: 16px;
+}
+
+/* ===== URL Form Card ===== */
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #141c31;
+  border: 1px solid #2a3552;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+}
+
+label {
+  display: block;
+  margin: 14px 0 8px;
+  color: #e2e6f5;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #35415f;
+  border-radius: 9px;
+  outline: none;
+  background: #0d1426;
+  color: #f5f6ff;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: #78839e;
+}
+
+input:focus,
+select:focus {
+  border-color: #927bff;
+  box-shadow: 0 0 0 3px rgba(146, 123, 255, 0.15);
+}
+
+/* ===== Analyze Button ===== */
+button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #8065ff, #6245e8);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(113, 84, 255, 0.28);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible,
+nav a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #b9adff;
+  outline-offset: 3px;
+}
+
+/* ===== Link Analysis Result ===== */
+.result-card {
+  width: 100%;
+  min-width: 0;
+  margin-top: 18px;
+  padding: 20px;
+  background: #10172a;
+  border: 1px solid #443a79;
+  border-radius: 12px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.result-card h3 {
+  margin: 0 0 10px;
+  color: #b9adff;
+  font-size: 17px;
+}
+
+#message {
+  margin: 0;
+  color: #c8d0e7;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* ===== Video Preview ===== */
+.video-preview {
+  width: 100%;
+  max-width: 360px;
+  min-width: 0;
+  margin: 22px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid #2a3552;
+  overflow: hidden;
+}
+
+.video-preview h4 {
+  margin: 0 0 14px;
+  color: #f5f6ff;
+  font-size: 16px;
+}
+
+.video-preview video {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: 200px;
+  margin: 0 auto;
+  border: 1px solid #35415f;
+  border-radius: 12px;
+  background: #080c16;
+  object-fit: contain;
+}
+
+/* ===== Notice ===== */
+.notice {
+  max-width: 600px;
+  margin: 18px auto;
+  color: #8e9ab6;
+  font-size: 12px;
+}
+
+/* ===== How It Works ===== */
+#how-it-works {
+  margin-top: 75px;
+  padding: 30px 20px;
+  border: 1px solid #252f49;
+  border-radius: 18px;
+  background: #10172a;
+}
+
+#how-it-works h2 {
+  margin-top: 0;
+  font-size: 27px;
+}
+
+.section-intro {
+  margin-bottom: 28px;
+  color: #a7b0c8;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.step-card {
+  padding: 22px 18px;
+  background: #141c31;
+  border: 1px solid #2a3552;
+  border-radius: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: #8065ff;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #28204e;
+  color: #b9adff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+  color: #f5f6ff;
+  font-size: 17px;
+}
+
+.step-card p {
+  margin: 0;
+  color: #a7b0c8;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 22px;
+  border-top: 1px solid #252d45;
+  background: #10172a;
+  color: #8e9ab6;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ===== Tablet and Mobile ===== */
+@media (max-width: 700px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 16px 5%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  main {
+    padding: 48px 16px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  #how-it-works {
+    margin-top: 50px;
+    padding: 24px 16px;
+  }
+
+  .result-card {
+    padding: 16px;
+  }
+
+  .video-preview video {
+    height: 190px;
+  }
+}
