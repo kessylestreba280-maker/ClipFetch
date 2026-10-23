@@ -92,11 +92,32 @@ function resetVideoPreview() {
 }
 
 previewPlayer.addEventListener("error", () => {
-  videoPreview.hidden = true;
+  const errorCode = previewPlayer.error?.code;
 
-  message.textContent =
-    "The video could not be played. Check the link or try another direct video URL.";
+  videoPreview.hidden = false;
+
+  switch (errorCode) {
+    case 2:
+      message.textContent =
+        "Network error: The video could not be downloaded. Check the URL and your internet connection.";
+      break;
+
+    case 3:
+      message.textContent =
+        "Video decoding error: The browser could not decode this video.";
+      break;
+
+    case 4:
+      message.textContent =
+        "Unsupported video source: Use a direct video URL with a browser-supported format, such as MP4.";
+      break;
+
+    default:
+      message.textContent =
+        "The video could not be played. Check whether the URL points directly to a playable video file.";
+  }
 });
+
 
 previewPlayer.addEventListener("playing", () => {
   message.textContent = "Video is playing successfully!";

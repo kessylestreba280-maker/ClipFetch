@@ -1,12 +1,26 @@
 
 const express = require("express");
-const path = require("path");
 const helmet = require("helmet");
 
 const app = express();
-const PORT = process.env.PORT ||3000;
+const PORT = process.env.PORT || 3000;
+
 app.disable("x-powered-by");
-app.use(helmet());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "media-src": [
+          "'self'",
+          "https://interactive-examples.mdn.mozilla.net",
+          "https:"
+        ]
+      }
+    }
+  })
+);
 
 app.use(express.json());
 
